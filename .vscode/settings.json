@@ -46,5 +46,6 @@
         "ctime": "cpp",
         "iomanip": "cpp"
     },
-    "editor.autoClosingQuotes" : "always"
+    "editor.autoClosingQuotes": "always",
+    "cmake.sourceDirectory": "${workspaceFolder}/src"
 }
