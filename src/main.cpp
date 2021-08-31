@@ -20,17 +20,21 @@ int main(){
   std::string data;
   int amount = 0;
   std::ofstream file("..\\src\\File\\file.txt", std::ios::app);
-  std::cout << "Enter your last name and first name." << std::endl;
-  std::getline(std::cin, name);
-  std::cout << "Enter the date (dd. mm. yyyy)" << std::endl;
-  std::cin >> data;
-  if(!validator(data)){
-    data = "ERROR";
-  }
-  std::cout << "Enter the amount in RUB" << std::endl;
-  std::cin >> amount;
+  if(file){
+    std::cout << "Enter your last name and first name." << std::endl;
+    std::getline(std::cin, name);
+    std::cout << "Enter the date (dd. mm. yyyy)" << std::endl;
+    std::cin >> data;
+    if(!validator(data)){
+      data = "ERROR";
+    }
+    std::cout << "Enter the amount in RUB" << std::endl;
+    std::cin >> amount;
 
-  file << name  << " " << data << " " << amount << "\n";
+    file << name  << " " << data << " " << amount << "\n";
+  }else{
+    std::cout << "Couldn't open the file!" << std::endl;
+  }
   file.close();
 
   return 0;
